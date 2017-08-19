@@ -164,7 +164,7 @@ class PeripheralsViewController : UITableViewController {
     }
 
     func alertAndStopScan(message: String) {
-        present(UIAlertController.alert(message: message), animated:true) { [weak self] _ in
+        present(UIAlertController.alert(message: message), animated:true) { [weak self] () -> Void in
             self.forEach { strongSelf in
                 strongSelf.stopScanAndToggleOff()
                 strongSelf.setScanButton()
@@ -217,13 +217,13 @@ class PeripheralsViewController : UITableViewController {
         return !connectingPeripherals.contains(peripheral.identifier)
     }
 
-    func didBecomeActive() {
+    @objc func didBecomeActive() {
         Logger.debug()
         tableView.reloadData()
         setScanButton()
-    }
+     }
 
-    func didEnterBackground() {
+    @objc func didEnterBackground() {
         Logger.debug()
         stopScanAndToggleOff()
     }
@@ -408,7 +408,7 @@ class PeripheralsViewController : UITableViewController {
         Singletons.scanningManager.stopScanning()
     }
 
-    func toggleScan(_ sender: AnyObject) {
+    @objc func toggleScan(_ sender: AnyObject) {
         guard !Singletons.beaconManager.isMonitoring else {
             present(UIAlertController.alert(message: "iBeacon monitoring is active. Cannot scan and monitor iBeacons simutaneously. Stop iBeacon monitoring to start scan"), animated:true, completion:nil)
             return

@@ -83,7 +83,7 @@ class PeripheralServiceCharacteristicEditValueViewController : UIViewController,
         _ = peripheralDiscoveryFuture?.cancel(cancelToken)
     }
 
-    func didEnterBackground() {
+    @objc func didEnterBackground() {
         peripheral?.disconnect()
         _ = navigationController?.popToRootViewController(animated: false)
     }

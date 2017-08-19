@@ -205,7 +205,7 @@ class PeripheralServiceCharacteristicViewController : UITableViewController {
         return value ? "YES" : "NO"
     }
     
-    func didEnterBackground() {
+    @objc func didEnterBackground() {
         peripheral?.disconnect()
         _ = navigationController?.popToRootViewController(animated: false)
     }

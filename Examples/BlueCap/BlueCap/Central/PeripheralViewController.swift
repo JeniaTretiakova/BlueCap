@@ -107,7 +107,7 @@ class PeripheralViewController : UITableViewController {
         }
     }
 
-    func didEnterBackground() {
+    @objc func didEnterBackground() {
         disconnect()
         _ = navigationController?.popToRootViewController(animated: false)
     }

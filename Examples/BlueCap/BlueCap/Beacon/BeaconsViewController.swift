@@ -43,7 +43,7 @@ class BeaconsViewController: UITableViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func updateBeacons() {
+    @objc func updateBeacons() {
         Logger.debug()
         self.tableView.reloadData()
     }
@@ -59,8 +59,7 @@ class BeaconsViewController: UITableViewController {
             }
         }
     }
-    
-    func didEnterBackground() {
+   @objc func didEnterBackground() {
         Logger.debug()
         _ = self.navigationController?.popToRootViewController(animated: false)
     }

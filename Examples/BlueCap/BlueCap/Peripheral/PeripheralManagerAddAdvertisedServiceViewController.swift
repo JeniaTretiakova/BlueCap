@@ -44,7 +44,7 @@ class PeripheralManagerAddAdvertisedServiceViewController: UITableViewController
         NotificationCenter.default.removeObserver(self)
     }
     
-    func didEnterBackground() {
+    @objc func didEnterBackground() {
         Logger.debug()
         guard let peripheralManagerViewController = peripheralManagerViewController else {
             return

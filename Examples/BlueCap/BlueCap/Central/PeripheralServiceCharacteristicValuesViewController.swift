@@ -169,7 +169,7 @@ class PeripheralServiceCharacteristicValuesViewController : UITableViewControlle
         characteristic.stopNotificationUpdates()
     }
 
-    func didEnterBackground() {
+    @objc func didEnterBackground() {
         peripheral?.disconnect()
         _ = navigationController?.popToRootViewController(animated: false)
     }

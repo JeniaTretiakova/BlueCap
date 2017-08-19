@@ -220,7 +220,7 @@ class PeripheralManagerViewController : UITableViewController, UITextFieldDelega
     }
 
     func alert(message: String) {
-        present(UIAlertController.alert(message: message), animated:true) { [weak self] _ in
+        present(UIAlertController.alert(message: message), animated:true) { [weak self] () -> Void in
             self.forEach { strongSelf in
                 Singletons.peripheralManager.reset()
             }
