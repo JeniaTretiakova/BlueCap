@@ -275,7 +275,7 @@ class LocationManagerTests: XCTestCase {
     // MARK: allowDeferredLocationUpdatesUntilTraveled
     func testAllowDeferredLocationUpdatesUntilTraveled_WhenUpdateSucceeds_CompletesSuccessfully() {
         CLLocationManagerMock._authorizationStatus = .authorizedAlways
-        let future = self.locationManager.allowDeferredLocationUpdatesUntilTraveled(1000.0, timeout: 300.0)
+        let future = self.locationManager.allowDeferredLocationUpdates(untilTraveled: 1000.0, timeout: 300.0)
         self.locationManager.didFinishDeferredUpdates(withError: nil)
         XCTAssertFutureSucceeds(future, context: TestContext.immediate) {
             XCTAssert(self.mock.allowDeferredLocationUpdatesUntilTraveledCalled)
@@ -284,7 +284,7 @@ class LocationManagerTests: XCTestCase {
 
     func testAllowDeferredLocationUpdatesUntilTraveled_WhenUpdateFails_CompletesWithError() {
         CLLocationManagerMock._authorizationStatus = .authorizedAlways
-        let future = self.locationManager.allowDeferredLocationUpdatesUntilTraveled(1000.0, timeout: 300.0)
+        let future = self.locationManager.allowDeferredLocationUpdates(untilTraveled: 1000.0, timeout: 300.0)
         self.locationManager.didFinishDeferredUpdates(withError: TestFailure.error)
         XCTAssertFutureFails(future, context: TestContext.immediate) { error in
             XCTAssert(self.mock.allowDeferredLocationUpdatesUntilTraveledCalled)

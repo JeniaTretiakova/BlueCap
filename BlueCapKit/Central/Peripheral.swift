@@ -405,7 +405,7 @@ public class Peripheral: NSObject, CBPeripheralDelegate {
                 }
             }
             if let servicesDiscoveredPromise = servicesDiscoveredPromise, !servicesDiscoveredPromise.completed {
-                 servicesDiscoveredPromise.success()
+                 servicesDiscoveredPromise.success(())
             }
         }
     }
@@ -460,7 +460,7 @@ public class Peripheral: NSObject, CBPeripheralDelegate {
         Logger.debug("uuid=\(identifier.uuidString), name=\(self.name)")
         _connectedAt = Date()
         _disconnectedAt = nil
-        connectionPromise?.success()
+        connectionPromise?.success(())
     }
 
     func didDisconnectPeripheral(_ error: Swift.Error?) {
