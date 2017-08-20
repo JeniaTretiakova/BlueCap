@@ -86,7 +86,7 @@ class ViewController: UITableViewController, UITextFieldDelegate {
     func startMonitoring() {
         self.progressView.show()
         self.uuidTextField.isEnabled = false
-        beaconRangingFuture = beaconManager.startMonitoring(for: beaconRegion, authorization: .authorizedWhenInUse).flatMap{ [unowned self] state -> FutureStream<[Beacon]> in
+        beaconRangingFuture = beaconManager.startMonitoring(for: beaconRegion, authorization: .authorizedAlways).flatMap{ [unowned self] state -> FutureStream<[Beacon]> in
             self.progressView.remove()
             switch state {
             case .start:
@@ -114,7 +114,6 @@ class ViewController: UITableViewController, UITextFieldDelegate {
             }
             if UIApplication.shared.applicationState == .active && beacons.count > 0 {
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: AppNotification.didUpdateBeacon), object: self.beaconRegion)
-                self.setInsideRegion()
             }
             self.beaconsLabel.text = "\(beacons.count)"
         }
