@@ -91,15 +91,12 @@ class ViewController: UITableViewController, UITextFieldDelegate {
             switch state {
             case .start:
                 self.setStartedMonitoring()
-                self.isRanging = true
-                return self.beaconManager.startRangingBeacons(in: self.beaconRegion)
+                self.isRanging = false
+                throw AppError.started
             case .inside:
                 self.setInsideRegion()
-                guard !self.beaconManager.isRangingRegion(identifier: self.beaconRegion.identifier) else {
-                    throw AppError.rangingBeacon
-                }
                 self.isRanging = true
-                return self.beaconManager.startRangingBeacons(in: self.beaconRegion)
+                return self.beaconManager.startRangingBeacons(in: self.beaconRegion, authorization: .authorizedAlways)
             case .outside:
                 self.setOutsideRegion()
                 self.beaconManager.stopRangingBeacons(in: self.beaconRegion)
@@ -108,7 +105,7 @@ class ViewController: UITableViewController, UITextFieldDelegate {
                 throw AppError.unknownState
             }
         }
-        beaconRangingFuture!.onSuccess { [unowned self] beacons in
+        beaconRangingFuture?.onSuccess { [unowned self] beacons in
             guard self.isRanging else {
                 return
             }
@@ -117,7 +114,7 @@ class ViewController: UITableViewController, UITextFieldDelegate {
             }
             self.beaconsLabel.text = "\(beacons.count)"
         }
-        beaconRangingFuture!.onFailure { [unowned self]  error in
+        beaconRangingFuture?.onFailure { [unowned self]  error in
             if error is AppError {
                 return
             }

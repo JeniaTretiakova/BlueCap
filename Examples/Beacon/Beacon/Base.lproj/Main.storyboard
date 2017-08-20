@@ -33,25 +33,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Advertise" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpv-Cv-Xaj">
-                                                    <rect key="frame" x="20" y="17" width="182" height="25"/>
-                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DaL-2G-Xqt">
-                                                    <rect key="frame" x="344" y="14" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="toggleAdvertise:" destination="sHZ-C7-U0G" eventType="valueChanged" id="zv3-Vk-9rB"/>
-                                                    </connections>
-                                                </switch>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rte-SW-iel">
+                                                    <rect key="frame" x="20" y="17" width="374" height="31"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Advertise" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpv-Cv-Xaj">
+                                                            <rect key="frame" x="0.0" y="0.0" width="325" height="31"/>
+                                                            <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DaL-2G-Xqt">
+                                                            <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                            <connections>
+                                                                <action selector="toggleAdvertise:" destination="sHZ-C7-U0G" eventType="valueChanged" id="zv3-Vk-9rB"/>
+                                                            </connections>
+                                                        </switch>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Tpv-Cv-Xaj" firstAttribute="leading" secondItem="kea-FA-ijW" secondAttribute="leadingMargin" constant="12" id="62X-rS-Fos"/>
-                                                <constraint firstItem="DaL-2G-Xqt" firstAttribute="centerY" secondItem="kea-FA-ijW" secondAttribute="centerY" id="Hxq-mp-Ke2"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="DaL-2G-Xqt" secondAttribute="trailing" constant="13" id="WWd-vA-cJo"/>
-                                                <constraint firstItem="DaL-2G-Xqt" firstAttribute="leading" secondItem="Tpv-Cv-Xaj" secondAttribute="trailing" constant="142" id="ZSB-H5-iKN"/>
-                                                <constraint firstItem="Tpv-Cv-Xaj" firstAttribute="top" secondItem="kea-FA-ijW" secondAttribute="topMargin" constant="9" id="yfB-fl-ncI"/>
+                                                <constraint firstItem="Rte-SW-iel" firstAttribute="leading" secondItem="kea-FA-ijW" secondAttribute="leading" constant="20" id="Mli-EP-rq2"/>
+                                                <constraint firstAttribute="bottom" secondItem="Rte-SW-iel" secondAttribute="bottom" constant="11.666666666666664" id="Vb5-kw-0tv"/>
+                                                <constraint firstItem="Tpv-Cv-Xaj" firstAttribute="top" secondItem="kea-FA-ijW" secondAttribute="top" constant="17" id="iMh-xH-tj2"/>
+                                                <constraint firstAttribute="trailing" secondItem="Rte-SW-iel" secondAttribute="trailing" constant="20" id="ne8-zd-kYM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
