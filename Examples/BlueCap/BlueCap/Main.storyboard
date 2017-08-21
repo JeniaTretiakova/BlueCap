@@ -1131,25 +1131,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Read Encryption Required" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="pgd-xI-wPy">
-                                                    <rect key="frame" x="20" y="12.5" width="255" height="25"/>
-                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YES" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eq4-jB-JLk">
-                                                    <rect key="frame" x="321.5" y="13" width="34.5" height="25"/>
-                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
-                                                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRr-uO-5yE">
+                                                    <rect key="frame" x="20" y="12.5" width="336" height="25"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Read Encryption Required" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="pgd-xI-wPy">
+                                                            <rect key="frame" x="0.0" y="0.0" width="301.5" height="25"/>
+                                                            <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="YES" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eq4-jB-JLk">
+                                                            <rect key="frame" x="301.5" y="0.0" width="34.5" height="25"/>
+                                                            <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
+                                                            <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="pgd-xI-wPy" firstAttribute="leading" secondItem="xIK-DS-Yrp" secondAttribute="leadingMargin" constant="12" id="BLP-cA-zZx"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Eq4-jB-JLk" secondAttribute="trailing" constant="11" id="I3t-hj-z5K"/>
-                                                <constraint firstAttribute="centerY" secondItem="pgd-xI-wPy" secondAttribute="centerY" id="Jg7-fr-K3d"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="pgd-xI-wPy" secondAttribute="trailing" constant="92" id="fNg-8T-jJP"/>
-                                                <constraint firstAttribute="centerY" secondItem="Eq4-jB-JLk" secondAttribute="centerY" constant="-0.5" id="gCA-Kb-g2L"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="cRr-uO-5yE" secondAttribute="trailing" constant="11" id="Amc-Jh-j51"/>
+                                                <constraint firstItem="cRr-uO-5yE" firstAttribute="top" secondItem="xIK-DS-Yrp" secondAttribute="top" constant="12.5" id="Vzn-uu-b0r"/>
+                                                <constraint firstAttribute="bottom" secondItem="cRr-uO-5yE" secondAttribute="bottom" constant="12" id="eXK-do-bKa"/>
+                                                <constraint firstItem="cRr-uO-5yE" firstAttribute="leading" secondItem="xIK-DS-Yrp" secondAttribute="leading" constant="20" id="oLZ-TL-5eu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1160,25 +1164,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YES" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyj-Cj-jlO">
-                                                    <rect key="frame" x="321.5" y="13" width="34.5" height="25"/>
-                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
-                                                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write Encryption Required" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="dp8-gQ-d5F">
-                                                    <rect key="frame" x="20" y="12" width="255" height="25"/>
-                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PVX-pR-QOd">
+                                                    <rect key="frame" x="20" y="12" width="336" height="25"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write Encryption Required" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="dp8-gQ-d5F">
+                                                            <rect key="frame" x="0.0" y="0.0" width="301.5" height="25"/>
+                                                            <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="YES" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyj-Cj-jlO">
+                                                            <rect key="frame" x="301.5" y="0.0" width="34.5" height="25"/>
+                                                            <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
+                                                            <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Cyj-Cj-jlO" secondAttribute="trailing" constant="11" id="BEj-TW-e2X"/>
-                                                <constraint firstAttribute="centerY" secondItem="Cyj-Cj-jlO" secondAttribute="centerY" constant="-0.5" id="J3m-iV-HKr"/>
-                                                <constraint firstAttribute="centerY" secondItem="dp8-gQ-d5F" secondAttribute="centerY" constant="0.5" id="VG8-Ue-VNl"/>
-                                                <constraint firstItem="dp8-gQ-d5F" firstAttribute="leading" secondItem="bEb-3w-obX" secondAttribute="leadingMargin" constant="12" id="ta6-ke-3AV"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="dp8-gQ-d5F" secondAttribute="trailing" constant="92" id="wVW-Hy-tpR"/>
+                                                <constraint firstItem="PVX-pR-QOd" firstAttribute="top" secondItem="bEb-3w-obX" secondAttribute="top" constant="12" id="Osd-RH-wlh"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="PVX-pR-QOd" secondAttribute="trailing" constant="11" id="Vho-bX-4vX"/>
+                                                <constraint firstItem="PVX-pR-QOd" firstAttribute="leading" secondItem="bEb-3w-obX" secondAttribute="leading" constant="20" id="oeT-NX-Udr"/>
+                                                <constraint firstAttribute="bottom" secondItem="PVX-pR-QOd" secondAttribute="bottom" constant="12.5" id="x5u-4G-mGY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1247,25 +1255,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write Without Response" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="eSZ-OX-gat">
-                                                    <rect key="frame" x="20" y="12.5" width="255" height="25"/>
-                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YES" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0Z-ch-XeR">
-                                                    <rect key="frame" x="321.5" y="13" width="34.5" height="25"/>
-                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
-                                                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TyU-Fe-cTr">
+                                                    <rect key="frame" x="20" y="12.5" width="336" height="25"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write Without Response" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="eSZ-OX-gat">
+                                                            <rect key="frame" x="0.0" y="0.0" width="301.5" height="25"/>
+                                                            <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="YES" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0Z-ch-XeR">
+                                                            <rect key="frame" x="301.5" y="0.0" width="34.5" height="25"/>
+                                                            <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
+                                                            <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="eSZ-OX-gat" secondAttribute="centerY" id="3aP-eb-TiB"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="eSZ-OX-gat" secondAttribute="trailing" constant="92" id="8Pd-Vr-6j2"/>
-                                                <constraint firstAttribute="centerY" secondItem="g0Z-ch-XeR" secondAttribute="centerY" constant="-0.5" id="JAu-Ul-Vhn"/>
-                                                <constraint firstItem="eSZ-OX-gat" firstAttribute="leading" secondItem="uMn-lW-LOq" secondAttribute="leadingMargin" constant="12" id="Jrd-YM-ZsV"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="g0Z-ch-XeR" secondAttribute="trailing" constant="11" id="cRp-iw-etq"/>
+                                                <constraint firstAttribute="bottom" secondItem="TyU-Fe-cTr" secondAttribute="bottom" constant="12" id="26a-YZ-N5Z"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="TyU-Fe-cTr" secondAttribute="trailing" constant="11" id="72c-DK-cor"/>
+                                                <constraint firstItem="TyU-Fe-cTr" firstAttribute="leading" secondItem="uMn-lW-LOq" secondAttribute="leading" constant="20" id="FUI-ur-e8V"/>
+                                                <constraint firstItem="TyU-Fe-cTr" firstAttribute="top" secondItem="uMn-lW-LOq" secondAttribute="top" constant="12.5" id="NmR-FY-dWj"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1357,25 +1369,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YES" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5v-nb-JCa">
-                                                    <rect key="frame" x="321.5" y="13" width="34.5" height="25"/>
-                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
-                                                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authenticated Signed Writes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Jim-iQ-qb9">
-                                                    <rect key="frame" x="20" y="11.5" width="275" height="25"/>
-                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ah4-cb-kJh">
+                                                    <rect key="frame" x="20" y="11.5" width="336" height="25"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authenticated Signed Writes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Jim-iQ-qb9">
+                                                            <rect key="frame" x="0.0" y="0.0" width="301.5" height="25"/>
+                                                            <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="YES" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5v-nb-JCa">
+                                                            <rect key="frame" x="301.5" y="0.0" width="34.5" height="25"/>
+                                                            <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
+                                                            <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Jim-iQ-qb9" secondAttribute="trailing" constant="72" id="0aH-bV-kHr"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="E5v-nb-JCa" secondAttribute="trailing" constant="11" id="B7W-xe-a9e"/>
-                                                <constraint firstAttribute="centerY" secondItem="Jim-iQ-qb9" secondAttribute="centerY" constant="1" id="E4B-oZ-MuN"/>
-                                                <constraint firstItem="Jim-iQ-qb9" firstAttribute="leading" secondItem="1gH-fK-NmS" secondAttribute="leadingMargin" constant="12" id="jAN-QQ-dCS"/>
-                                                <constraint firstAttribute="centerY" secondItem="E5v-nb-JCa" secondAttribute="centerY" constant="-0.5" id="s6e-dy-Bk5"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ah4-cb-kJh" secondAttribute="trailing" constant="11" id="2f5-rO-a6M"/>
+                                                <constraint firstItem="ah4-cb-kJh" firstAttribute="leading" secondItem="1gH-fK-NmS" secondAttribute="leading" constant="20" id="5Vb-0O-caq"/>
+                                                <constraint firstItem="ah4-cb-kJh" firstAttribute="top" secondItem="1gH-fK-NmS" secondAttribute="top" constant="11.5" id="BTC-IE-NHK"/>
+                                                <constraint firstAttribute="bottom" secondItem="ah4-cb-kJh" secondAttribute="bottom" constant="13" id="y41-PH-Wgr"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1413,25 +1429,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notify Encryption Required" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="fAa-uD-p5V">
-                                                    <rect key="frame" x="20" y="12.5" width="275" height="25"/>
-                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zW5-Vf-pJw">
-                                                    <rect key="frame" x="321.5" y="13" width="34.5" height="25"/>
-                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
-                                                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JmW-W7-tp1">
+                                                    <rect key="frame" x="20" y="12.5" width="336" height="25"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notify Encryption Required" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="fAa-uD-p5V">
+                                                            <rect key="frame" x="0.0" y="0.0" width="301.5" height="25"/>
+                                                            <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zW5-Vf-pJw">
+                                                            <rect key="frame" x="301.5" y="0.0" width="34.5" height="25"/>
+                                                            <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
+                                                            <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="fAa-uD-p5V" secondAttribute="trailing" constant="72" id="JjP-qX-gf3"/>
-                                                <constraint firstAttribute="centerY" secondItem="fAa-uD-p5V" secondAttribute="centerY" id="MvS-gI-Y9K"/>
-                                                <constraint firstAttribute="centerY" secondItem="zW5-Vf-pJw" secondAttribute="centerY" constant="-0.5" id="OqV-bU-qo9"/>
-                                                <constraint firstItem="fAa-uD-p5V" firstAttribute="leading" secondItem="hrY-Z7-3PA" secondAttribute="leadingMargin" constant="12" id="sq4-08-bVO"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="zW5-Vf-pJw" secondAttribute="trailing" constant="11" id="tMP-Po-0zt"/>
+                                                <constraint firstItem="JmW-W7-tp1" firstAttribute="leading" secondItem="hrY-Z7-3PA" secondAttribute="leading" constant="20" id="JNr-sO-kK0"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="JmW-W7-tp1" secondAttribute="trailing" constant="11" id="T4W-8G-kaT"/>
+                                                <constraint firstAttribute="bottom" secondItem="JmW-W7-tp1" secondAttribute="bottom" constant="12" id="iKh-dh-CXW"/>
+                                                <constraint firstItem="JmW-W7-tp1" firstAttribute="top" secondItem="hrY-Z7-3PA" secondAttribute="top" constant="12.5" id="oye-lB-aWG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1442,25 +1462,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lG-fh-L6v">
-                                                    <rect key="frame" x="321.5" y="13" width="34.5" height="25"/>
-                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
-                                                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indicate Encryption Required" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="5yS-hN-Dt5">
-                                                    <rect key="frame" x="20" y="11.5" width="275" height="25"/>
-                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="krD-sr-QyG">
+                                                    <rect key="frame" x="20" y="11.5" width="336" height="25"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indicate Encryption Required" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="5yS-hN-Dt5">
+                                                            <rect key="frame" x="0.0" y="0.0" width="301.5" height="25"/>
+                                                            <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lG-fh-L6v">
+                                                            <rect key="frame" x="301.5" y="0.0" width="34.5" height="25"/>
+                                                            <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
+                                                            <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="5yS-hN-Dt5" secondAttribute="trailing" constant="72" id="BfS-NX-6Et"/>
-                                                <constraint firstAttribute="centerY" secondItem="5lG-fh-L6v" secondAttribute="centerY" constant="-0.5" id="CDg-2w-aH2"/>
-                                                <constraint firstAttribute="centerY" secondItem="5yS-hN-Dt5" secondAttribute="centerY" constant="1" id="RG3-GM-TfA"/>
-                                                <constraint firstItem="5yS-hN-Dt5" firstAttribute="leading" secondItem="dSG-Bq-3cK" secondAttribute="leadingMargin" constant="12" id="jbm-Ds-nkO"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="5lG-fh-L6v" secondAttribute="trailing" constant="11" id="prf-Vj-o4x"/>
+                                                <constraint firstAttribute="bottom" secondItem="krD-sr-QyG" secondAttribute="bottom" constant="13" id="0MO-Cw-clg"/>
+                                                <constraint firstItem="krD-sr-QyG" firstAttribute="top" secondItem="dSG-Bq-3cK" secondAttribute="top" constant="11.5" id="SOX-WM-0Xd"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="krD-sr-QyG" secondAttribute="trailing" constant="11" id="bV1-Dl-3eS"/>
+                                                <constraint firstItem="krD-sr-QyG" firstAttribute="leading" secondItem="dSG-Bq-3cK" secondAttribute="leading" constant="20" id="d7o-Xc-9uv"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
