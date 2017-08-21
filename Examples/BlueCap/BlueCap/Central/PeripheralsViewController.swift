@@ -15,7 +15,7 @@ class SerialUUIDQueue {
     var uuids = [UUID]()
 
     var isEmpty: Bool {
-        return queue.sync { self.uuids.count == 0 }
+        return self.uuids.count == 0
     }
 
     var count: Int {
@@ -23,37 +23,33 @@ class SerialUUIDQueue {
     }
 
     func push(_ uuid: UUID) {
-        queue.sync {
-            guard !self.uuids.contains(uuid) else {
-                return
-            }
-            Logger.debug("queueing \(uuid)")
-            self.uuids.append(uuid)
+        guard !self.uuids.contains(uuid) else {
+            return
         }
+        Logger.debug("queueing \(uuid)")
+        self.uuids.append(uuid)
     }
 
     func shift() -> UUID? {
-        return queue.sync {
-            guard self.uuids.count > 0 else {
-                return nil
-            }
-            let uuid = self.uuids.remove(at: 0)
-            Logger.debug("dequeueing \(uuid)")
-            return uuid
+        guard self.uuids.count > 0 else {
+            return nil
         }
+        let uuid = self.uuids.remove(at: 0)
+        Logger.debug("dequeueing \(uuid)")
+        return uuid
     }
 
     func removeAll() {
-        queue.sync { self.uuids.removeAll() }
+        self.uuids.removeAll()
     }
 
     func set(_ peripherals: [Peripheral]) {
-        queue.sync { peripherals.forEach { peripheral in
+        peripherals.forEach { peripheral in
             guard !self.uuids.contains(peripheral.identifier) else {
                 return
             }
             self.uuids.append(peripheral.identifier)
-        } }
+        }
     }
 }
 
@@ -249,6 +245,9 @@ class PeripheralsViewController : UITableViewController {
         guard canScanAndConnect else {
             Logger.debug("connection updates disabled")
             disconnectConnectingPeripherals()
+            return
+        }
+        guard Singletons.discoveryManager.discoveredPeripherals.count > 1 else {
             return
         }
         let maxConnections = ConfigStore.getMaximumPeripheralsConnected()

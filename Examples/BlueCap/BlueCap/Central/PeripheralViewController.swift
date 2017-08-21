@@ -220,7 +220,6 @@ class PeripheralViewController : UITableViewController {
                 switch error {
                 case PeripheralError.forcedDisconnect:
                     Logger.debug("Connection force disconnect: '\(peripheral.name)', \(peripheral.identifier.uuidString)")
-                    break
                 case PeripheralError.connectionTimeout:
                     if peripheral.timeoutCount < maxTimeouts {
                         Logger.debug("Connection timeout: '\(peripheral.name)', \(peripheral.identifier.uuidString)")

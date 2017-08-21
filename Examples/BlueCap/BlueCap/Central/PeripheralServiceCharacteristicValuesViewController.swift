@@ -69,10 +69,10 @@ class PeripheralServiceCharacteristicValuesViewController : UITableViewControlle
         recieveNotificationsIfEnabled()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
-        stopReceivingNotificationIfNotifying()
+        stopReceivingNotifications()
         _ = peripheralDiscoveryFuture?.cancel(cancelToken)
     }
 
@@ -155,15 +155,12 @@ class PeripheralServiceCharacteristicValuesViewController : UITableViewControlle
         }
         
         resvieveNotificationUpdatesFutureStream.onFailure { [weak self] error in
-            self?.present(UIAlertController.alert(title: "Charcteristic notification update", error: error) { [weak self] _ in
-                _ = self?.navigationController?.popViewController(animated: true)
-                return
-            }, animated:true, completion:nil)
+            self?.presentAlertIngoringForcedDisconnect(title: "Charcteristic notification update", error: error)
         }
     }
 
-    func stopReceivingNotificationIfNotifying() {
-        guard let characteristic = characteristic, characteristic.isNotifying else {
+    func stopReceivingNotifications() {
+        guard let characteristic = characteristic else {
             return
         }
         characteristic.stopNotificationUpdates()
