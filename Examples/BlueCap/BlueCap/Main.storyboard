@@ -58,17 +58,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="RSSI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3l4-ZW-ZZK">
-                                                    <rect key="frame" x="16" y="15" width="36" height="20.5"/>
+                                                    <rect key="frame" x="16" y="13" width="39.5" height="25"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R8j-Qv-n9I">
-                                                    <rect key="frame" x="349.5" y="15" width="10.5" height="20.5"/>
+                                                    <rect key="frame" x="347" y="13" width="13" height="25"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -82,17 +82,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hds-Dc-Gum">
-                                                    <rect key="frame" x="16" y="15" width="40.5" height="20.5"/>
+                                                    <rect key="frame" x="16" y="13" width="50" height="25"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Disconnected" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nQZ-ef-o6o">
-                                                    <rect key="frame" x="254" y="15" width="106" height="20.5"/>
+                                                    <rect key="frame" x="236" y="13" width="124" height="25"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -309,7 +309,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Timeouts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="Xh1-mV-n3u">
-                                                    <rect key="frame" x="16" y="13" width="85.5" height="25"/>
+                                                    <rect key="frame" x="15" y="13" width="85.5" height="25"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -340,10 +340,13 @@
                         <outlet property="connectionsLabel" destination="kIR-qi-Waa" id="YF6-Z0-SDf"/>
                         <outlet property="disconnectionsLabel" destination="U1t-rT-9vk" id="bMR-Rr-n03"/>
                         <outlet property="discoveredAtLabel" destination="Tum-Vn-nQe" id="ZBM-MH-XbU"/>
+                        <outlet property="rssiLabel" destination="R8j-Qv-n9I" id="Cb7-oP-jHD"/>
                         <outlet property="secondsConnectedLabel" destination="En3-lc-Rxz" id="Gqc-4B-mZ3"/>
                         <outlet property="serviceCount" destination="dmP-OH-tES" id="EgU-Uc-jvk"/>
                         <outlet property="serviceLabel" destination="qyu-F3-YsW" id="kBh-1p-8AE"/>
+                        <outlet property="stateLabel" destination="nQZ-ef-o6o" id="EnL-gX-ycq"/>
                         <outlet property="timeoutsLabel" destination="W87-rn-1st" id="fNM-2v-Jzl"/>
+                        <outlet property="uuidLabel" destination="zey-7K-jTf" id="TN6-fj-DAp"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vv7-sL-tEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
