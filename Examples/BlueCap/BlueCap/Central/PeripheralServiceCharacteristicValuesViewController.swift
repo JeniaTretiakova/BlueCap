@@ -52,14 +52,14 @@ class PeripheralServiceCharacteristicValuesViewController : UITableViewControlle
                 return
         }
         
-        peripheralDiscoveryFuture.onSuccess(cancelToken: cancelToken)  { [weak self] _ in
+        peripheralDiscoveryFuture.onSuccess(cancelToken: cancelToken)  { [weak self] _ -> Void in
             self?.updateWhenActive()
         }
-        peripheralDiscoveryFuture.onFailure(cancelToken: cancelToken) { [weak self] error in
+        peripheralDiscoveryFuture.onFailure(cancelToken: cancelToken) { [weak self] (error) -> Void in
             guard let strongSelf = self else {
                 return
             }
-            strongSelf.progressView.remove().onSuccess {
+            strongSelf.progressView.remove().onSuccess { () -> Void in
                 strongSelf.presentAlertIngoringForcedDisconnect(title: "Connection Error", error: error)
                 strongSelf.updateWhenActive()
             }
@@ -106,23 +106,23 @@ class PeripheralServiceCharacteristicValuesViewController : UITableViewControlle
 
         progressView.show()
         
-        let readFuture = characteristic.read(timeout: Double(ConfigStore.getCharacteristicReadWriteTimeout())).flatMap { [weak self] _ -> Future<Void> in
+        let readFuture = characteristic.read(timeout: Double(ConfigStore.getCharacteristicReadWriteTimeout())).flatMap { [weak self] () -> Future<Void> in
             guard let strongSelf = self else {
                 throw AppError.unlikelyFailure
             }
             return strongSelf.progressView.remove()
         }
         
-        readFuture.onSuccess { [weak self] _ in
+        readFuture.onSuccess { [weak self] () -> Void in
             self?.updateWhenActive()
         }
         
-        readFuture.onFailure { [weak self] error in
+        readFuture.onFailure { [weak self] (error) -> Void in
             guard let strongSelf = self else {
                 return
             }
-            return strongSelf.progressView.remove().onSuccess {
-                strongSelf.present(UIAlertController.alert(title: "Charcteristic read error", error: error) { _ in
+            return strongSelf.progressView.remove().onSuccess { () -> Void in
+                strongSelf.present(UIAlertController.alert(title: "Charcteristic read error", error: error) { () -> Void in
                     _ = strongSelf.navigationController?.popViewController(animated: true)
                     return
                 }, animated:true, completion:nil)

@@ -301,7 +301,7 @@ public class LocationManager : NSObject, CLLocationManagerDelegate {
             return requestLocationPromise.future
         }
         requestLocationPromise = Promise<[CLLocation]>()
-        return authorize(authorization, context: context).flatMap(context: context) { [weak self] in
+        return authorize(authorization, context: context).flatMap(context: context) { [weak self] _ -> Future<[CLLocation]> in
             guard let strongSelf = self else {
                 throw LocationError.unlikelyFailure
             }

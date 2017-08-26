@@ -192,20 +192,20 @@ class PeripheralViewController : UITableViewController {
         let connectionTimeout = ConfigStore.getPeripheralConnectionTimeoutEnabled() ? Double(ConfigStore.getPeripheralConnectionTimeout()) : Double.infinity
         let scanTimeout = TimeInterval(ConfigStore.getCharacteristicReadWriteTimeout())
 
-        peripheralDiscoveryFuture = peripheral.connect(connectionTimeout: connectionTimeout, capacity: 1).flatMap { [weak self, weak peripheral] () -> Future<Void> in
+        peripheralDiscoveryFuture = peripheral.connect(connectionTimeout: connectionTimeout, capacity: 1).flatMap { [weak self, weak peripheral] () -> FutureStream<Void> in
             guard let peripheral = peripheral else {
                 throw AppError.unlikelyFailure
             }
             self?.updateConnectionStateLabel()
             return peripheral.discoverAllServices(timeout: scanTimeout)
-        }.flatMap { [weak peripheral] ()  -> Future<[Void]> in
+        }.flatMap { [weak peripheral] ()  -> FutureStream<[Void]> in
             guard let peripheral = peripheral else {
                 throw AppError.unlikelyFailure
             }
             return peripheral.services.map { $0.discoverAllCharacteristics(timeout: scanTimeout) }.sequence()
         }
 
-        peripheralDiscoveryFuture?.onSuccess { [weak self] _ in
+        peripheralDiscoveryFuture?.onSuccess { [weak self] _ -> Void in
             self.forEach { strongSelf in
                 _ = strongSelf.progressView.remove()
                 strongSelf.updateConnectionStateLabel()
@@ -213,7 +213,7 @@ class PeripheralViewController : UITableViewController {
             }
         }
 
-        peripheralDiscoveryFuture?.onFailure { [weak self] error in
+        peripheralDiscoveryFuture?.onFailure { [weak self] (error) -> Void in
             self.forEach { strongSelf in
                 let maxTimeouts = ConfigStore.getPeripheralMaximumTimeoutsEnabled() ? ConfigStore.getPeripheralMaximumTimeouts() : UInt.max
                 let maxDisconnections = ConfigStore.getPeripheralMaximumDisconnectionsEnabled() ? ConfigStore.getPeripheralMaximumDisconnections() : UInt.max
@@ -248,7 +248,7 @@ class PeripheralViewController : UITableViewController {
                 strongSelf.updateConnectionStateLabel()
                 strongSelf.updateRSSIUpdatesAndPeripheralPropertiesIfConnected()
                 let progressViewFuture = strongSelf.progressView.remove()
-                progressViewFuture.onSuccess {
+                progressViewFuture.onSuccess { _ in
                     strongSelf.present(UIAlertController.alert(title: "Connection error", error: error) { _ in
                         _ = strongSelf.navigationController?.popToRootViewController(animated: true)
                     }, animated: true)

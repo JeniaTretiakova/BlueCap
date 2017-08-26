@@ -52,7 +52,7 @@ public class RegionManager : LocationManager {
         authorizationFuture.onFailure { _ in
             self.updateIsMonitoring(false)
         }
-        return authorizationFuture.flatMap(capacity: capacity, context: context) {
+        return authorizationFuture.flatMap(capacity: capacity, context: context) { _ in
             self.updateIsMonitoring(true)
             self.configuredRegions[region.identifier] = region
             self.clLocationManager.startMonitoring(for: region.clRegion)

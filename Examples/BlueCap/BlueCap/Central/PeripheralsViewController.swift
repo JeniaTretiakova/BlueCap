@@ -528,7 +528,7 @@ class PeripheralsViewController : UITableViewController {
             }
             return peripheral.services.map { $0.discoverAllCharacteristics(timeout: scanTimeout) }.sequence()
         }
-        peripheralDiscoveryFuture.onSuccess { [weak self, weak peripheral] _ in
+        peripheralDiscoveryFuture.onSuccess { [weak self, weak peripheral] () -> Void in
             guard let peripheral = peripheral else {
                 return
             }
@@ -539,7 +539,7 @@ class PeripheralsViewController : UITableViewController {
                 strongSelf.updateWhenActive()
             }
         }
-        peripheralDiscoveryFuture.onFailure { [weak self, weak peripheral] error in
+        peripheralDiscoveryFuture.onFailure { [weak self, weak peripheral] (error) -> Void in
             guard let peripheral = peripheral else {
                 return
             }
