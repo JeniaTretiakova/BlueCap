@@ -32,10 +32,10 @@ class MutableCharacteristicTests: XCTestCase {
             return MutableCharacteristic(cbMutableCharacteristic: characteristic, profile: profile)
         }
         let future = peripheralManager.add(service)
-        future.onSuccess(context: TestContext.immediate) { (_) -> Void in
+        future.onSuccess(context: TestContext.immediate) { _ in
             mock.isAdvertising = true
         }
-        future.onFailure(context: TestContext.immediate) { error in
+        future.onFailure(context: TestContext.immediate) { _ in
             XCTFail()
         }
         peripheralManager.didAddService(service.cbMutableService, error: nil)
@@ -51,10 +51,10 @@ class MutableCharacteristicTests: XCTestCase {
         service.characteristics = [MutableCharacteristic(cbMutableCharacteristic: cbCharacteristic1, profile: characteristicProfile),
                                    MutableCharacteristic(cbMutableCharacteristic: cbCharacteristic2, profile: characteristicProfile)]
         let future = peripheralManager.add(service)
-        future.onSuccess(context: TestContext.immediate) { (_) -> Void in
+        future.onSuccess(context: TestContext.immediate) { _ in
             mock.isAdvertising = true
         }
-        future.onFailure(context: TestContext.immediate) { error in
+        future.onFailure(context: TestContext.immediate) { _ in
             XCTFail()
         }
         peripheralManager.didAddService(service.cbMutableService, error: nil)

@@ -49,7 +49,7 @@ class PeripheralServiceCharacteristicEditValueViewController : UIViewController,
             guard let strongSelf = self else {
                 return
             }
-            strongSelf.progressView.remove().onSuccess { () -> Void in
+            strongSelf.progressView.remove().onSuccess { _ in
                 strongSelf.presentAlertIngoringForcedDisconnect(title: "Connection Error", error: error)
             }
         }
@@ -68,7 +68,7 @@ class PeripheralServiceCharacteristicEditValueViewController : UIViewController,
             self?.valueTextField.text = characteristic.stringValue?[valueName]
         }
         readFuture.onFailure { [weak self] error in
-            self?.progressView.remove().onSuccess { () -> Void in
+            self?.progressView.remove().onSuccess { _ in
                 self?.present(UIAlertController.alert(title: "Charcteristic read error", error: error) { _ in
                     _ = self?.navigationController?.popViewController(animated: true)
                     return
@@ -111,13 +111,13 @@ class PeripheralServiceCharacteristicEditValueViewController : UIViewController,
             writeFuture = characteristic.write(data: newValue.dataFromHexString(), timeout:Double(ConfigStore.getCharacteristicReadWriteTimeout()))
         }
 
-        writeFuture.onSuccess { [weak self] () -> Void in
-            self?.progressView.remove().onSuccess { () -> Void in
+        writeFuture.onSuccess { [weak self] _ in
+            self?.progressView.remove().onSuccess { _ in
                 _ = self?.navigationController?.popViewController(animated: true)
             }
         }
         writeFuture.onFailure { [weak self] (error) -> Void in
-            self?.progressView.remove().onSuccess { () -> Void in
+            self?.progressView.remove().onSuccess { _ in
                 self?.present(UIAlertController.alert(title: "Charcteristic write error", error: error) { _ in
                     _ = self?.navigationController?.popViewController(animated: true)
                     return

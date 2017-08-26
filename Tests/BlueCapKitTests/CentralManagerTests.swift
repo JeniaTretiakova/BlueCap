@@ -95,7 +95,7 @@ class CentralManagerTests: XCTestCase {
         let centralManager = CentralManager(centralManager: mock)
         let future = centralManager.startScanning(timeout: 0.1)
         XCTAssertFutureStreamFails(future, validations: [
-            {error in
+            { error in
                 XCTAssertEqualErrors(error, CentralManagerError.serviceScanTimeout)
             }
         ])
@@ -141,7 +141,7 @@ class CentralManagerTests: XCTestCase {
         let future = centralManager.whenStateRestored()
         centralManager.willRestoreState(testPeripherals.map { $0 as CBPeripheralInjectable },
                                         scannedServices: testScannedServices, options: testOptions)
-        XCTAssertFutureSucceeds(future, context: TestContext.immediate) { (_) -> Void in
+        XCTAssertFutureSucceeds(future, context: TestContext.immediate) { _ in
             guard let options = centralManager.options else {
                 XCTFail()
                 return

@@ -118,7 +118,7 @@ class PeripheralManagerViewController : UITableViewController, UITextFieldDelega
     @IBAction func toggleAdvertise(_ sender:AnyObject) {
         if Singletons.peripheralManager.isAdvertising {
             let stopAdvertisingFuture = Singletons.peripheralManager.stopAdvertising()
-            stopAdvertisingFuture.onSuccess { [weak self] () -> Void in
+            stopAdvertisingFuture.onSuccess { [weak self] _ in
                 self?.setUIState()
             }
             stopAdvertisingFuture.onFailure { [weak self] _ in
@@ -138,7 +138,7 @@ class PeripheralManagerViewController : UITableViewController, UITextFieldDelega
             }
         }
 
-        startAdvertiseFuture.onSuccess { [weak self] () -> Void in
+        startAdvertiseFuture.onSuccess { [weak self] _ in
             self?.setUIState()
             self?.present(UIAlertController.alert(message: "Powered on and started advertising."), animated: true, completion: nil)
         }
@@ -163,11 +163,11 @@ class PeripheralManagerViewController : UITableViewController, UITextFieldDelega
                     }, animated: true, completion: nil)
                 }
                 let stopAdvertisingFuture = Singletons.peripheralManager.stopAdvertising()
-                stopAdvertisingFuture.onSuccess { () -> Void in
+                stopAdvertisingFuture.onSuccess { _ in
                     strongSelf.setUIState()
 
                 }
-                stopAdvertisingFuture.onFailure { _ -> Void in
+                stopAdvertisingFuture.onFailure { _ in
                     strongSelf.setUIState()
                 }
             }

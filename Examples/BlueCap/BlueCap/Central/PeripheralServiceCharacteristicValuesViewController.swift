@@ -59,7 +59,7 @@ class PeripheralServiceCharacteristicValuesViewController : UITableViewControlle
             guard let strongSelf = self else {
                 return
             }
-            strongSelf.progressView.remove().onSuccess { () -> Void in
+            strongSelf.progressView.remove().onSuccess { _ in
                 strongSelf.presentAlertIngoringForcedDisconnect(title: "Connection Error", error: error)
                 strongSelf.updateWhenActive()
             }
@@ -113,17 +113,17 @@ class PeripheralServiceCharacteristicValuesViewController : UITableViewControlle
             return strongSelf.progressView.remove()
         }
         
-        readFuture.onSuccess { [weak self] () -> Void in
+        readFuture.onSuccess { [weak self] _ in
             self?.updateWhenActive()
         }
         
         readFuture.onFailure { [weak self] (error) -> Void in
-            guard let strongSelf = self else {
+            guard let `self` = self else {
                 return
             }
-            return strongSelf.progressView.remove().onSuccess { () -> Void in
-                strongSelf.present(UIAlertController.alert(title: "Charcteristic read error", error: error) { () -> Void in
-                    _ = strongSelf.navigationController?.popViewController(animated: true)
+            return self.progressView.remove().onSuccess { _ in
+                self.present(UIAlertController.alert(title: "Charcteristic read error", error: error) { _ in
+                    _ = self.navigationController?.popViewController(animated: true)
                     return
                 }, animated:true, completion:nil)
             }

@@ -528,7 +528,7 @@ class PeripheralsViewController : UITableViewController {
             }
             return peripheral.services.map { $0.discoverAllCharacteristics(timeout: scanTimeout) }.sequence()
         }
-        peripheralDiscoveryFuture.onSuccess { [weak self, weak peripheral] () -> Void in
+        peripheralDiscoveryFuture.onSuccess { [weak self, weak peripheral] (_) -> Void in
             guard let peripheral = peripheral else {
                 return
             }

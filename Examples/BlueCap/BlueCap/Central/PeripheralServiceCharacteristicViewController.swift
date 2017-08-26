@@ -80,7 +80,7 @@ class PeripheralServiceCharacteristicViewController : UITableViewController {
             guard let strongSelf = self else {
                 return
             }
-            strongSelf.progressView.remove().onSuccess { () -> Void in
+            strongSelf.progressView.remove().onSuccess { _ in
                 strongSelf.presentAlertIngoringForcedDisconnect(title: "Connection Error", error: error)
                 strongSelf.updateWhenActive()
             }
@@ -144,13 +144,13 @@ class PeripheralServiceCharacteristicViewController : UITableViewController {
             return strongSelf.notifySwitch.isOn ? characteristic.startNotifying() : characteristic.stopNotifying()
         }
 
-        updateFuture.onSuccess { [weak self] () -> Void in
+        updateFuture.onSuccess { [weak self] _ in
             _ = self?.progressView.remove()
             self?.updateUI()
             self?.updateWhenActive()
         }
         updateFuture.onFailure{ [weak self] error -> Void in
-            self?.progressView.remove().onSuccess { () -> Void in
+            self?.progressView.remove().onSuccess { _ in
                 self?.present(UIAlertController.alert(title: "Characteristic notification error", error: error), animated: true, completion: nil)
             }
             self?.updateUI()

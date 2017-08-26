@@ -55,13 +55,13 @@ class PeripheralManagerServiceProfilesViewController : ServiceProfilesTableViewC
             service.characteristicsFromProfiles()
             self.progressView.show()
             let future = Singletons.peripheralManager.add(service)
-            future.onSuccess { () -> Void in
+            future.onSuccess { _ in
                 PeripheralStore.addSupportedPeripheralService(service.uuid)
                 _ = self.navigationController?.popViewController(animated: true)
                 _ = self.progressView.remove()
             }
             future.onFailure { error -> Void in
-                self.progressView.remove().onSuccess { () -> Void in
+                self.progressView.remove().onSuccess { _ in
                     self.present(UIAlertController.alert(title: "Add Service Error", error: error), animated: true) {
                         _ = self.navigationController?.popViewController(animated: true)
                     }

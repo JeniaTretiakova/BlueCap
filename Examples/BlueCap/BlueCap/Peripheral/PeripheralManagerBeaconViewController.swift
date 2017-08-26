@@ -109,7 +109,7 @@ class PeripheralManagerBeaconViewController: UITableViewController, UITextFieldD
         }
         if Singletons.peripheralManager.isAdvertising {
             let stopAdvertisingFuture = Singletons.peripheralManager.stopAdvertising()
-            stopAdvertisingFuture.onSuccess { [weak self] () -> Void in
+            stopAdvertisingFuture.onSuccess { [weak self] _ in
                 self?.setUIState()
             }
             stopAdvertisingFuture.onFailure { [weak self] (error) -> Void in
@@ -124,7 +124,7 @@ class PeripheralManagerBeaconViewController: UITableViewController, UITextFieldD
             let beaconRegion = BeaconRegion(proximityUUID: uuid, identifier: name, major: beaconMinorMajor[1], minor: beaconMinorMajor[0])
             let startAdvertiseFuture = Singletons.peripheralManager.startAdvertising(beaconRegion)
 
-            startAdvertiseFuture.onSuccess { [weak self] () -> Void in
+            startAdvertiseFuture.onSuccess { [weak self] _ in
                 self?.setUIState()
                 self?.present(UIAlertController.alert(message: "Started advertising."), animated: true, completion: nil)
             }
