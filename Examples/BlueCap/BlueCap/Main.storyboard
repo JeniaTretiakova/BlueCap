@@ -593,7 +593,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UUID" adjustsFontForContentSizeCategory="YES" minimumFontSize="5" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vrh-sp-uYv">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UUID" minimumFontSize="5" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vrh-sp-uYv">
                                                     <rect key="frame" x="8" y="10" width="398" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="c2k-IV-v99"/>
@@ -3549,7 +3549,7 @@
                                                                             <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="1000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O5q-GS-dle">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="1000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="O5q-GS-dle">
                                                                             <rect key="frame" x="70" y="0.0" width="40" height="19.666666666666671"/>
                                                                             <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="15"/>
                                                                             <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3559,7 +3559,7 @@
                                                                 </stackView>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="d8G-E8-BEI" secondAttribute="trailing" constant="105" id="tQw-Lb-jSP"/>
+                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="d8G-E8-BEI" secondAttribute="trailing" constant="50" id="tQw-Lb-jSP"/>
                                                             </constraints>
                                                         </stackView>
                                                     </subviews>
@@ -3585,7 +3585,6 @@
                                         <constraint firstItem="APH-Gu-eXV" firstAttribute="centerY" secondItem="2Ef-AO-iFz" secondAttribute="centerY" id="YuU-0R-1mm"/>
                                         <constraint firstItem="lDf-4i-AgX" firstAttribute="leadingMargin" secondItem="d8G-E8-BEI" secondAttribute="leading" id="ZnV-gh-72Q"/>
                                         <constraint firstItem="PxP-0d-wqV" firstAttribute="top" secondItem="APH-Gu-eXV" secondAttribute="topMargin" id="dfM-Io-bKJ"/>
-                                        <constraint firstItem="d8G-E8-BEI" firstAttribute="trailingMargin" secondItem="G8v-hE-uoM" secondAttribute="trailing" constant="-120" id="fG5-ZH-LXc"/>
                                         <constraint firstItem="PxP-0d-wqV" firstAttribute="leadingMargin" secondItem="lDf-4i-AgX" secondAttribute="leading" id="hNh-Nm-g5g"/>
                                         <constraint firstItem="APH-Gu-eXV" firstAttribute="leading" secondItem="2Ef-AO-iFz" secondAttribute="leadingMargin" id="w2e-Vy-GVe"/>
                                     </constraints>
@@ -3818,7 +3817,7 @@
                                     <constraints>
                                         <constraint firstItem="Jmk-v2-4TJ" firstAttribute="leadingMargin" secondItem="bh8-ke-5fE" secondAttribute="leading" id="7UB-Nu-b53"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Jmk-v2-4TJ" secondAttribute="trailing" id="8br-yH-80q"/>
-                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Axv-NW-ZT6" secondAttribute="trailing" constant="110.33" id="DWc-WP-tqh"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Axv-NW-ZT6" secondAttribute="trailing" constant="50" id="DWc-WP-tqh"/>
                                         <constraint firstItem="Jmk-v2-4TJ" firstAttribute="centerY" secondItem="UCA-ce-pvT" secondAttribute="centerY" id="gCY-M6-PEy"/>
                                         <constraint firstItem="Jmk-v2-4TJ" firstAttribute="leading" secondItem="UCA-ce-pvT" secondAttribute="leadingMargin" id="rMU-2G-vC3"/>
                                         <constraint firstItem="bh8-ke-5fE" firstAttribute="leadingMargin" secondItem="gOA-ie-ZWf" secondAttribute="leading" id="vYm-8v-4L3"/>
