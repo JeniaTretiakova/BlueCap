@@ -593,12 +593,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UUID" minimumFontSize="5" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vrh-sp-uYv">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UUID" adjustsFontForContentSizeCategory="YES" minimumFontSize="5" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vrh-sp-uYv">
                                                     <rect key="frame" x="8" y="10" width="398" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="c2k-IV-v99"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="11"/>
+                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="bDK-NX-3mT" id="tU4-NO-mgl"/>
@@ -2802,15 +2802,15 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="urw-FY-It8">
-                                                    <rect key="frame" x="18" y="9.6666666666666643" width="378" height="31"/>
+                                                    <rect key="frame" x="8" y="9.6666666666666643" width="398" height="31"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nF9-Zu-503">
-                                                            <rect key="frame" x="0.0" y="0.0" width="329" height="31"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="349" height="31"/>
                                                             <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="19"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8mT-Zt-6Un">
-                                                            <rect key="frame" x="329" y="0.0" width="51" height="31"/>
+                                                            <rect key="frame" x="349" y="0.0" width="51" height="31"/>
                                                             <connections>
                                                                 <action selector="toggleNotificatons" destination="qDj-sM-07o" eventType="valueChanged" id="hB2-6D-89b"/>
                                                             </connections>
@@ -2819,9 +2819,9 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="urw-FY-It8" firstAttribute="leading" secondItem="Mky-cl-HNy" secondAttribute="leadingMargin" constant="10" id="7Cr-vA-qmH"/>
+                                                <constraint firstItem="urw-FY-It8" firstAttribute="leading" secondItem="Mky-cl-HNy" secondAttribute="leadingMargin" id="7Cr-vA-qmH"/>
                                                 <constraint firstItem="urw-FY-It8" firstAttribute="centerY" secondItem="Mky-cl-HNy" secondAttribute="centerY" id="gNT-qD-9Qy"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="urw-FY-It8" secondAttribute="trailing" constant="10" id="wN6-7P-ulf"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="urw-FY-It8" secondAttribute="trailing" id="wN6-7P-ulf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -3155,9 +3155,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Characteristic" id="IFu-8E-43n"/>
                     <connections>
-                        <outlet property="notifyLabel" destination="nF9-Zu-503" id="yOS-3C-GWw"/>
+                        <outlet property="broadcastingLabel" destination="xPu-P6-1gn" id="hXg-Lc-Crb"/>
+                        <outlet property="notifyLabel" destination="nF9-Zu-503" id="6AX-5V-YEd"/>
                         <outlet property="notifySwitch" destination="8mT-Zt-6Un" id="S6v-S2-B50"/>
-                        <outlet property="notifyingLabel" destination="nF9-Zu-503" id="gJe-gH-96T"/>
+                        <outlet property="notifyingLabel" destination="Bdg-b6-SEm" id="E4S-me-xaH"/>
                         <outlet property="propertyAuthenticatedSignedWritesLabel" destination="aya-iW-aem" id="ykw-NT-Ehr"/>
                         <outlet property="propertyBroadcastLabel" destination="xPu-P6-1gn" id="fVY-q2-7Sv"/>
                         <outlet property="propertyExtendedPropertiesLabel" destination="WD4-F0-gfx" id="A1q-YU-egl"/>
@@ -3548,7 +3549,7 @@
                                                                             <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="1000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5q-GS-dle">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="1000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O5q-GS-dle">
                                                                             <rect key="frame" x="70" y="0.0" width="40" height="19.666666666666671"/>
                                                                             <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="15"/>
                                                                             <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3737,7 +3738,7 @@
                                                                             <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="655365" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fd4-Qh-csI">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="655365" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fd4-Qh-csI">
                                                                             <rect key="frame" x="50.333333333333314" y="0.0" width="60" height="19.666666666666664"/>
                                                                             <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="15"/>
                                                                             <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4872,8 +4873,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vhM-yw-b5Q"/>
-        <segue reference="bnk-4c-Gfl"/>
-        <segue reference="Shv-rw-Zsd"/>
+        <segue reference="1b7-0s-Wre"/>
+        <segue reference="dOT-6s-x6d"/>
         <segue reference="1tB-ws-lpc"/>
     </inferredMetricsTieBreakers>
 </document>
