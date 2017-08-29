@@ -31,7 +31,7 @@
 	<key>NSLocationUsageDescription</key>
 	<string>FutureLocation iBeacon example</string>
 	<key>LSApplicationCategoryType</key>
-	<string></string>
+	<string>public.app-category.utilities</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>bluetooth-central</string>

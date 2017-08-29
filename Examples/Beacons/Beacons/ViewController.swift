@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import BlueCapKit
 
-class ViewController: UITableViewController, UITextFieldDelegate {
+class ViewController: UITableViewController,  UITextFieldDelegate {
 
     @IBOutlet var stateLabel: UILabel!
     @IBOutlet var uuidTextField: UITextField!
@@ -124,6 +124,7 @@ class ViewController: UITableViewController, UITextFieldDelegate {
     }
     
     // UITextFieldDelegate
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let newValue = self.uuidTextField.text, let uuid = UUID(uuidString: newValue) else {
             self.present(UIAlertController.alertOnErrorWithMessage("UUID is Invalid"), animated: true, completion: nil)
